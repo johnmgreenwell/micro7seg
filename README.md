@@ -12,7 +12,7 @@ The driver's header and source rely on an external user-defined hardware abstrac
 
 The HAL GPIOPort object `init()` method should perform any necessary initialization required by the hardware used to implement each set of segment and selection pins. The `portMode()` method should set any such segment or selection pins to output when supplied with the enumeration value `GPIO_OUTPUT`. The `write()` method should map the value given (0 = not illuminated, not selected; 1 = illuminated, selected) onto each of these pins in the order corresponding to the segment and selection arrangement (see example below). Direct GPIO pins need not used, as the HAL layer may map these arbitrarily.
 
-Because the display must be refreshed at regular intervals, a timer must be used to call the Micro7Seg's `refresh()` periodically (e.g. every 5ms).
+Because the display operates by persistence-of-vision and must be refreshed at regular intervals, a timer is to be used to call the Micro7Seg's `refresh()` periodically (e.g. every 5ms).
 
 ### Example
 
@@ -66,4 +66,4 @@ someTimerISR()
 
 ## License
 
-MIT © 2023 John Greenwell
+MIT © 2024 John Greenwell
