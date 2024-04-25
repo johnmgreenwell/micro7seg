@@ -1,0 +1,18 @@
+{
+    "name": "micro7seg",
+    "version": "1.0.0",
+    "description": "Portable, multi-instance 7-segment display driver",
+    "keywords": "embedded, driver, hal, led, display, 7seg, micro7seg",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/johnmgreenwell/micro7seg"
+    },
+    "license": "MIT",
+    "frameworks": "*",
+    "platforms": "*",
+    "build": {
+        "flags": [
+        "-I../../include"
+        ]
+    }
+}
