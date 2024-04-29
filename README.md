@@ -17,7 +17,7 @@ Because the display operates by persistence-of-vision and must be refreshed at r
 ### Example
 
 ```cpp
-#include <micro7seg.h>
+#include "micro7seg.h"
 
 ...
 // Character segment and selection pin number mapping
