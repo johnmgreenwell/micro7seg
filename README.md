@@ -4,7 +4,7 @@ Portable, multi-instance 7-segment display driver.
 
 ## Overview
 
-This HAL-mediated custom 7-segment display driver permits ease of use that is portable across many platforms. It is designed specifically for the [QDSP-6064 Bubble Display](https://www.sparkfun.com/products/retired/12710), though it's compatibility may extend beyond this to generic 7-segment displays.
+This HAL-mediated custom 7-segment display driver permits ease of use that is designed to be platform-independent. It is designed specifically for the [QDSP-6064 Bubble Display](https://www.sparkfun.com/products/retired/12710), though it's compatibility may extend beyond this to generic 7-segment displays.
 
 ## Usage
 
