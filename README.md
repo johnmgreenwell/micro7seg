@@ -6,6 +6,8 @@ Portable, multi-instance 7-segment display driver.
 
 This HAL-mediated custom 7-segment display driver permits ease of use that is designed to be platform-independent. It is designed specifically for the [QDSP-6064 Bubble Display](https://www.sparkfun.com/products/retired/12710), though it's compatibility may extend beyond this to generic 7-segment displays.
 
+![Example Runtime](images/micro_numeric_display_runtime.gif)
+
 ## Usage
 
 The driver's header and source rely on an external user-defined hardware abstraction layer (HAL) called `hal.h` which defines the necessary calls in the `HAL` namespace. Namely, a GPIOPort class with `init()`, `portMode()` and `write()` methods.
