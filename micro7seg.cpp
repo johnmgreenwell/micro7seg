@@ -12,6 +12,7 @@
 
 namespace PeripheralIO {
 
+const uint8_t MAX_STR_LENGTH = 32;
 const uint8_t CONVERSION_TABLE[16] = 
 {
     0x3F,  // 0
@@ -79,14 +80,45 @@ void Micro7Seg::write(uint16_t data)
 
 bool Micro7Seg::print(const char *str)
 {
-    // TODO: write function
-    return false;
+    bool stringValid = true;
+    uint8_t digIt = 0;
+    uint8_t strLength = 0;
+
+    clear();
+
+    while ((str[strLength]) && (strLength < MAX_STR_LENGTH))
+        ++strLength;
+
+    for (uint8_t i = strLength; i > 0; i--)
+    {
+        uint8_t data = str[i-1];
+        data = toUpperCase(data);
+        if (!checkCharValidity(data))
+        {
+            stringValid = false;
+            break;
+        }
+        if (data == '.')
+        {
+            _digit[digIt].code |= 0x80;
+        }
+        else
+        {
+            _digit[digIt].code |= convertCharToCode(data);
+            _digit[digIt].value = convertCharToVal(data);
+            _digit[digIt].toChar = data;
+            _digit[digIt].hasDec = (_digit[digIt].code & 0x80);
+            if (digIt < 3) digIt++;
+            else break;
+        }
+    }
+
+    return stringValid;
 }
 
 bool Micro7Seg::print(const String& str) 
 {
     bool stringValid = true;
-
     uint8_t digIt = 0;
 
     clear();
