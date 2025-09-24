@@ -4,7 +4,7 @@
 // Description : 
 //               This driver is intended for control of QDSP-6064 Bubble 7-Segment display module.
 //
-//               The circuit used to implement this driver is intentionally flexible. Two Hardware Abstraction Layer
+//               The circuit used to implement this driver is flexible by design. Two Hardware Abstraction Layer
 //               (HAL) GPIOPort classes are used for the selection lines and the segment driver lines. Within the
 //               HAL GPIOPort implementation, these may be actual GPIO, or shift registers, or IO-expanders etc.
 //
@@ -54,17 +54,20 @@ public:
 
     /**
      * @brief Write raw 16-bit unsigned int to display in hexadecimal; 1 nibble per digit (big endian)
+     * @param val Value to be displayed
     */
     void write(uint16_t val);
 
     /**
      * @brief Parse string to hexadecimal display, including decimal point if present
+     * @param str String to be printed to the display
      * @return False for invalid input, true otherwise
     */
     bool print(const char *str);
 
     /**
      * @brief Parse string to hexadecimal display, including decimal point if present
+     * @param str String to be printed to the display
      * @return False for invalid input, true otherwise
     */
     bool print(const String& str);
